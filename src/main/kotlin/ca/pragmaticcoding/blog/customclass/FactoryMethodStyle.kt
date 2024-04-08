@@ -17,39 +17,41 @@ import javafx.scene.layout.Region
 import javafx.stage.Stage
 
 class FactoryMethodStyle : Application() {
-   override fun start(stage: Stage) {
-      stage.scene = Scene(createContent())
-      stage.show()
-   }
+    override fun start(stage: Stage) {
+        stage.scene = Scene(createContent())
+        stage.show()
+    }
 
-   private val name: StringProperty = SimpleStringProperty("")
-   private val results: StringProperty = SimpleStringProperty("No search done")
+    private val name: StringProperty = SimpleStringProperty("")
+    private val results: StringProperty = SimpleStringProperty("No search done")
 
-   private fun createContent(): Region = BorderPane().apply {
-      center = createCustomBox("Last Name:", "Search", name, EventHandler<ActionEvent> { doSearch() });
-      bottom = Label().apply { textProperty().bind(results) }
-      padding = Insets(20.0)
-   }
+    private fun createContent(): Region = BorderPane().apply {
+        center = createCustomBox("Last Name:", "Search", name) { doSearch() }
+        bottom = Label().apply { textProperty().bind(results) }
+        padding = Insets(20.0)
+    }
 
-   private fun createCustomBox(labelText: String,
-                               buttonText: String,
-                               boundProperty: StringProperty,
-                               handler: EventHandler<ActionEvent>): Region = HBox().apply {
-      val textField = TextField().apply { textProperty().bindBidirectional(boundProperty) }
-      children += Label(labelText)
-      children += textField
-      children += Button(buttonText).apply {
-         onAction = handler
-         defaultButtonProperty().bind(textField.focusedProperty().and(name.isNotEmpty))
-         disableProperty().bind(name.isEmpty)
-      }
-      alignment = Pos.CENTER_LEFT
-      spacing = 6.0
-   }
+    private fun createCustomBox(
+        labelText: String,
+        buttonText: String,
+        boundProperty: StringProperty,
+        handler: EventHandler<ActionEvent>
+    ): Region = HBox().apply {
+        val textField = TextField().apply { textProperty().bindBidirectional(boundProperty) }
+        children += Label(labelText)
+        children += textField
+        children += Button(buttonText).apply {
+            onAction = handler
+            defaultButtonProperty().bind(textField.focusedProperty().and(name.isNotEmpty))
+            disableProperty().bind(name.isEmpty)
+        }
+        alignment = Pos.CENTER_LEFT
+        spacing = 6.0
+    }
 
-   private fun doSearch() {
-      results.value = "Nothing found for: ${name.value}"
-   }
+    private fun doSearch() {
+        results.value = "Nothing found for: ${name.value}"
+    }
 }
 
 fun main() = Application.launch(FactoryMethodStyle::class.java)

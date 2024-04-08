@@ -1,4 +1,4 @@
-package ca.pragmaticcoding.blog.combobox;
+package ca.pragmaticcoding.blog.combobox
 
 import ca.pragmaticcoding.widgetsfx.addWidgetStyles
 import javafx.application.Application
