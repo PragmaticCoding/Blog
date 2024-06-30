@@ -34,7 +34,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 
 application {
     mainModule = "ca.pragmaticcoding.blog"
-    mainClass = "ca.pragmaticcoding.blog.actionproperty.ActionPropertyApplication1"
+    mainClass = "ca.pragmaticcoding.blog.taskprogress.TaskProgress1Kt"
 }
 
 javafx {

@@ -11,15 +11,15 @@ import javafx.scene.layout.Region
 import javafx.scene.layout.StackPane
 import javafx.scene.shape.Circle
 
-class ToggleFlip() : ToggleButton() {
+class ToggleFlip : ToggleButton() {
 
     init {
         styleClass.setAll("toggle-flip")
     }
 
-    override fun createDefaultSkin(): Skin<*>? {
-        return ToggleFlipSkin(this)
+    override fun createDefaultSkin(): Skin<*> {
         super.getCssMetaData()
+        return ToggleFlipSkin(this)
     }
 
     companion object CssStuff {
@@ -29,7 +29,7 @@ class ToggleFlip() : ToggleButton() {
                 override fun getStyleableProperty(styleable: ToggleFlip) = styleable.flipperSizeImpl
             }
         private val cssMetaDataList =
-            (ToggleButton.getClassCssMetaData() + ToggleFlip.BUTTON_SIZE_META_DATA) as MutableList
+            (ToggleButton.getClassCssMetaData() + BUTTON_SIZE_META_DATA) as MutableList
 
         fun getClassCssMetaData() = cssMetaDataList
     }

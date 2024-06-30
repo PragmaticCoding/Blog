@@ -38,7 +38,7 @@ infix fun Node.addFade(duration: Duration): FadeActionProperty = FadeActionPrope
 fun <T : Node> T.bindFade(duration: Duration, boundTo: ObservableBooleanValue): T =
     apply { addFade(duration).bind(boundTo) }
 
-class ActionPropertyViewBuilder1() : Builder<Region> {
+class ActionPropertyViewBuilder1 : Builder<Region> {
     private val nodeVisible: BooleanProperty = SimpleBooleanProperty(true)
 
     override fun build(): Region = VBox(10.0).apply {

@@ -247,14 +247,7 @@ class MyMandelbrot : Application() {
         ToggleGroup().apply {
             toggles += listOf(makeColourMenuItem("Light", "1") {
                 mandelbrotSet {
-                    newSettings(
-                        246.0,
-                        maximumIterations,
-                        0.9,
-                        60,
-                        0,
-                        60
-                    )
+                    newSettings(246.0, maximumIterations, 0.9, 60, 0, 60)
                 }
             },
                 makeColourMenuItem("Dark", "2") {

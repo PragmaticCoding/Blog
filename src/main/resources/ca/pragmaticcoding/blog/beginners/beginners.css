@@ -1,0 +1,18 @@
+.transparent-button {
+  -fx-background-color: transparent;
+  -fx-font-size: 30px;
+}
+
+.test-box {
+  -fx-background-color: red;
+}
+
+.prompt-label {
+  -fx-font-family: caspian;
+  -fx-font-size: 20px;
+}
+
+.title-label {
+  -fx-font-family: caspian;
+  -fx-font-size: 40px;
+}

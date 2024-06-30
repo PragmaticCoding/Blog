@@ -8,4 +8,6 @@ module ca.pragmaticcoding.blog {
     opens ca.pragmaticcoding.blog to javafx.fxml;
     exports ca.pragmaticcoding.blog;
     exports ca.pragmaticcoding.blog.actionproperty;
+    exports ca.pragmaticcoding.blog.beginners;
+    exports ca.pragmaticcoding.blog.taskprogress;
 }
