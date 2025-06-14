@@ -1,5 +1,6 @@
 package ca.pragmaticcoding.widgetsfx
 
+import javafx.beans.InvalidationListener
 import javafx.beans.WeakListener
 import javafx.beans.property.StringProperty
 import javafx.collections.MapChangeListener
@@ -20,6 +21,22 @@ import java.lang.ref.WeakReference
 
 fun Scene.addWidgetStyles() = apply {
     object {}::class.java.getResource("widgetsfx.css")?.toString()?.let { stylesheets += it }
+}
+
+fun Node.hoverLookup() = apply {
+    hoverProperty().addListener(InvalidationListener {
+        if (hoverProperty().value) {
+            lookupAll("*").forEach {
+                println("Id: ${it.id}\tStyleClass: ${it.styleClass}\t\tType: ${it::class.java.simpleName}")
+            }
+            println()
+            println()
+            lookupAll("*").forEach {
+                println(it)
+            }
+
+        }
+    })
 }
 
 fun <T : Parent> T.addWidgetStyles() = apply {

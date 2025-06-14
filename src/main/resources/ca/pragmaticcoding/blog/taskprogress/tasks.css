@@ -1,0 +1,27 @@
+.root {}
+
+.progress-label {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: blue;
+}
+
+.progress-label: stage1 {
+   -fx-text-fill: black;
+}
+
+.progress-label: stage2 {
+   -fx-text-fill: orange;
+}
+
+.progress-label: stage3 {
+   -fx-text-fill: pink;
+}
+
+.progress-label: stage4 {
+   -fx-text-fill: green;
+}
+
+.progress-label: done {
+   -fx-text-fill: red;
+}

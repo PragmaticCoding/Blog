@@ -1,0 +1,17 @@
+
+
+.transition-label {
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-text-fill: darkgreen;
+  -fx-scale-x: 1.0;
+  -fx-scale-y: 1.0;
+  transition-property: all;
+  transition-duration: 5.0s;
+}
+
+.transition-label: activated {
+   -fx-text-fill: red;
+   -fx-scale-x: 2.0;
+   -fx-scale-y: 2.0;
+}

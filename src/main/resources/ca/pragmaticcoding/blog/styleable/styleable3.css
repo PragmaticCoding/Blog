@@ -1,0 +1,8 @@
+.custom-widget {
+  -wfx-circle-colour: indianred;
+  -wfx-square-colour: teal;
+  -fx-border-color: blue;
+  -fx-border-width: 3px;
+  -fx-padding: 5px;
+}
+

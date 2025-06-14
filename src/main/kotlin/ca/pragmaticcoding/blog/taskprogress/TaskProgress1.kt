@@ -31,17 +31,7 @@ class Controller {
             val stageUpdate = AtomicReference<ProcessingStage?>()
             val stage = SimpleObjectProperty(ProcessingStage.STAGE1)
             override fun call() {
-                println("stage: ${stage.value}")
-                interactor.doStep1()
-                updateStage(ProcessingStage.STAGE2)
-                println("stage: ${stage.value}")
-                interactor.doStep2()
-                updateStage(ProcessingStage.STAGE3)
-                println("stage: ${stage.value}")
-                interactor.doStep3()
-                updateStage(ProcessingStage.STAGE4)
-                interactor.doStep4()
-                updateStage(ProcessingStage.DONE)
+                interactor.doProcessing { updateStage(it) }
             }
 
             fun updateStage(newStage: ProcessingStage) {
@@ -54,6 +44,7 @@ class Controller {
                 }
             }
         }
+        task.setOnSucceeded { model.currentStage.unbind() }
         model.currentStage.bind(task.stage)
         Thread(task).start()
     }
@@ -65,28 +56,37 @@ class ViewBuilder(private val model: Model, private val taskRunner: () -> Unit) 
             textProperty().bind(model.currentStage.asString())
         }
         bottom = Button("Click Me").apply {
-            setOnAction {
-                println("Clicked")
-                taskRunner.invoke()
-            }
+            setOnAction { taskRunner.invoke() }
         }
     }
 }
 
 class Interactor(private val model: Model) {
-    fun doStep1() {
+
+    fun doProcessing(updater: (ProcessingStage) -> Unit) {
+        doStep1()
+        updater(ProcessingStage.STAGE2)
+        doStep2()
+        updater(ProcessingStage.STAGE3)
+        doStep3()
+        updater(ProcessingStage.STAGE4)
+        doStep4()
+        updater(ProcessingStage.DONE)
+    }
+
+    private fun doStep1() {
         Thread.sleep(5000)
     }
 
-    fun doStep2() {
+    private fun doStep2() {
         Thread.sleep(5000)
     }
 
-    fun doStep3() {
-        Thread.sleep(15000)
+    private fun doStep3() {
+        Thread.sleep(5000)
     }
 
-    fun doStep4() {
+    private fun doStep4() {
         Thread.sleep(5000)
     }
 }

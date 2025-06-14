@@ -1,0 +1,17 @@
+.root {}
+
+.status-label {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: black;
+  transition: -fx-text-fill 5s;
+}
+
+.status-label: warning {
+   -fx-text-fill: blue;
+}
+
+.status-label: error {
+   -fx-text-fill: red;
+}
+

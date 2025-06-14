@@ -1,0 +1,14 @@
+.custom-widget {
+  -fx-padding: 10px;
+  -fx-border-width: 3px;
+  -fx-border-color: green;
+  -fx-background-color: beige;
+}
+
+.custom-widget .circle {
+  -fx-fill: indianred;
+}
+
+.custom-widget .square {
+  -fx-fill: darkseagreen;
+}

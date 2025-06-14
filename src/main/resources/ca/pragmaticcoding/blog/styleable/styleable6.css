@@ -1,0 +1,10 @@
+.decimal-label {
+  -fx-min-width: 12ex;
+  -wfx-decimal-places: 2;
+  -wfx-negative-format: paren;
+  -wfx-format: "%.4f"
+}
+
+.decimal-label: negative {
+  -fx-text-fill: red;
+}

@@ -34,11 +34,11 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 
 application {
     mainModule = "ca.pragmaticcoding.blog"
-    mainClass = "ca.pragmaticcoding.blog.taskprogress.TaskProgress1Kt"
+    mainClass = "ca.pragmaticcoding.blog.tablecolumns.Example3Kt"
 }
 
 javafx {
-    version = "21.0.2"
+    version = "23"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 

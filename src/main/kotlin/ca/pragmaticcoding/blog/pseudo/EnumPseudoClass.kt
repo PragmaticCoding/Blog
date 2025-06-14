@@ -41,6 +41,7 @@ enum class StatusPseudoClass : PseudoClassSupplier {
     }
 }
 
+
 fun Node.bindPseudoClassEnum(property: ObservableValue<out PseudoClassSupplier>) {
     property.subscribe { oldValue, newValue ->
         oldValue?.let { pseudoClassStateChanged(it.getPseudoClass(), false) }

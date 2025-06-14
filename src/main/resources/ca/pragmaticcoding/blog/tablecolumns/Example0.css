@@ -1,0 +1,49 @@
+.root {
+  -wfx-funky-color: green;
+}
+
+
+.temperature-column {
+  -wfx-cold-point: 30.0;
+}
+
+.table-row-cell .temperature-column  {
+  -fx-alignment: center-right;
+}
+
+.table-row-cell .temperature-column:cold  {
+  -fx-text-fill: hotpink;
+  -fx-font-weight: bold;
+}
+
+.table-row-cell .temperature-column:freezing  {
+  -fx-text-fill: cornflowerblue;
+  -fx-font-weight: bold;
+}
+
+.boolean-column {
+  -wfx-show-false: true;
+  -wfx-use-circles: false;
+  -wfx-circle-size: 5.0;
+}
+
+.boolean-column .true-image {
+  -fx-fit-width: 14px;
+  -fx-fit-height: 14px;
+  -fx-image: url(checkmark.png);
+}
+
+.boolean-column .false-image {
+  -fx-fit-width: 14px;
+  -fx-fit-height: 14px;
+  -fx-image: url(crossmark.png);
+}
+
+.boolean-column .true-circle {
+  -fx-fill: green;
+}
+
+.boolean-column .false-circle {
+  -fx-fill: red;
+}
+

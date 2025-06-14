@@ -1,0 +1,27 @@
+.nest-outer {
+  -fx-background : blanchedalmond;
+  -fx-padding: 20px;
+  -fx-border-color: green;
+  -fx-border-width: 3px;
+  -fx-body-color: coral;
+}
+
+.nest-middle {
+  -fx-border-color: blue;
+  -fx-border-width: 3px;
+  -fx-padding: 20px;
+}
+
+.nest-inner {
+  -fx-border-color: red;
+  -fx-border-width: 3px;
+  -fx-padding: 20px;
+}
+
+.nest-middle .button {
+  -fx-body-color: thistle;
+}
+
+.nest-middle > .button {
+  -fx-body-color: aqua;
+}

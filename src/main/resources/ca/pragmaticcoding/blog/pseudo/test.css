@@ -1,0 +1,23 @@
+.root {}
+
+.status-label {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: blue;
+}
+
+.status-label: normal {
+   -fx-text-fill: black;
+}
+
+.status-label: warning {
+   -fx-text-fill: orange;
+}
+
+.status-label: error {
+   -fx-text-fill: red;
+}
+
+.status-label: failed {
+   -fx-text-fill: green;
+}

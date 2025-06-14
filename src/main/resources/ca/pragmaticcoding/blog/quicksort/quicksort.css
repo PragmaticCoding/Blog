@@ -1,0 +1,5 @@
+.element-label {
+  -fx-border-width : 2px;
+  -fx-border-color : black;
+  -fx-alignment: center;
+}

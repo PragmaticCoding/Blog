@@ -1,0 +1,6 @@
+.root {
+  -fx-default-button: #EE8434;
+  -fx-focus-color: #C95D63;
+  -fx-faint-focus-color: #C95D6322;
+  -fx-shadow-highlight-color: red;
+}
