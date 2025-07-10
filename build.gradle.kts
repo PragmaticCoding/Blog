@@ -1,6 +1,8 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("application")
-    kotlin("jvm") version "1.9.22"
+    kotlin("jvm") version "2.1.21"
     id("org.javamodularity.moduleplugin") version "1.8.12"
     id("org.openjfx.javafxplugin") version "0.1.0"
     id("org.beryx.jlink") version "3.0.1"
@@ -23,18 +25,18 @@ java {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(23)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = "21"
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_23)
     }
 }
 
 application {
     mainModule = "ca.pragmaticcoding.blog"
-    mainClass = "ca.pragmaticcoding.blog.tablecolumns.Example3Kt"
+    mainClass = "ca.pragmaticcoding.blog.dirtyfx.DirtyFXExample2Kt"
 }
 
 javafx {

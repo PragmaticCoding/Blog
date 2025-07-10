@@ -55,9 +55,9 @@ infix fun <T : Pane> T.addChild(child: Node): T = apply { children += child }
 
 infix fun <T : Node> T.addStyle(newStyleClass: String): T = apply { styleClass += newStyleClass }
 
-fun textFieldOf(value: StringProperty) = TextField().apply { textProperty().bind(value) }
+fun textFieldOf(value: StringProperty) = TextField().apply { textProperty().bindBidirectional(value) }
 
-infix fun TextField.bindTo(value: StringProperty) = apply { textProperty().bind(value) }
+infix fun TextField.bindTo(value: StringProperty) = apply { textProperty().bindBidirectional(value) }
 
 fun buttonOf(text: String, handler: EventHandler<ActionEvent>) = Button(text) addAction handler
 

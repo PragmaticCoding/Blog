@@ -5,6 +5,7 @@ module ca.pragmaticcoding.blog {
     requires kotlin.stdlib;
     requires org.kordamp.ikonli.javafx;
 
+
     opens ca.pragmaticcoding.blog to javafx.fxml, javafx.base;
     exports ca.pragmaticcoding.blog;
     exports ca.pragmaticcoding.blog.actionproperty;
@@ -22,4 +23,7 @@ module ca.pragmaticcoding.blog {
     exports ca.pragmaticcoding.blog.stylingtables;
     exports ca.pragmaticcoding.blog.tablecolumns;
     exports ca.pragmaticcoding.blog.styleable;
+    exports ca.pragmaticcoding.blog.extractors;
+    exports ca.pragmaticcoding.blog.transformlist;
+    exports ca.pragmaticcoding.blog.dirtyfx;
 }
